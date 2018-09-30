@@ -1,0 +1,80 @@
+.pricing-section {
+  padding-top: $spacing-large;
+  padding-bottom: $spacing-large * 2;
+
+  h2 {
+    color: $white;
+  }
+
+  .col {
+    background-color: $white;
+    padding: $spacing-small;
+    margin: $spacing-small;
+    opacity: .6;
+    transition: opacity .2s linear;
+    
+    @media screen and (max-width: $screen-md) {
+      flex: 1 1 calc(100% - 2rem);
+    }
+
+    @media screen and (min-width: $screen-md) {
+      flex: 1 1 calc(50% - 2rem);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: $gold;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 90%;
+      margin-bottom: 0;
+    }
+  }
+
+  .bottom {
+    background-color: $white;
+    padding: $spacing-small;
+    margin: $spacing-small 0 $spacing-default;
+
+    ul {
+      margin: 0;
+    }
+  }
+
+  a {
+    margin: auto;
+    width: 15rem;
+    display: block;
+    text-align: center;
+  }
+
+  .has-ribbon {
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+
+    &::before {
+      content: "Aktuell";
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $white;
+      background-color: $gold;
+      font-size: 90%;
+      text-transform: uppercase;
+      padding: .3rem;
+      font-weight: 600;
+      width: 10rem;
+      text-align: center;
+      transform: rotate(45deg) translateX(3rem) translateY(-1rem);
+
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.facilities-section {
+  padding-top: $spacing-large;
+  padding-bottom: $spacing-large;
+  background-color: $white;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    margin-top: $spacing-small;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  a {
+    order: -1;
+  }
+}

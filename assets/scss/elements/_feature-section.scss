@@ -1,0 +1,21 @@
+.feature-section {
+  background-color: $gray-light;
+  padding-top: $spacing-large;
+
+  article {
+    position: relative;
+    padding-left: 5.5rem;
+    margin-bottom: $spacing-large;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  svg {
+    position: absolute;
+    color: $gold;
+    top: 5px;
+    left: $spacing-small;
+  }
+}

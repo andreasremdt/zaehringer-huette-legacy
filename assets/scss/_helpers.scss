@@ -1,0 +1,32 @@
+.fancy-image {
+  position: relative;
+  display: block;
+
+  &:hover::before,
+  &:focus::before {
+    opacity: 1;
+  }
+
+  &::before {
+    content: "+";
+    position: absolute;
+    top: $spacing-small;
+    left: $spacing-small;
+    bottom: $spacing-small;
+    right: $spacing-small;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+    background-color: rgba($gray-darker, 0.8);
+  }
+}
+
+.fancy-title {
+  text-align: center;
+  padding-bottom: 1.8rem;
+  background: transparent url("/assets/icons/heading-drawing.svg") center bottom no-repeat;
+}

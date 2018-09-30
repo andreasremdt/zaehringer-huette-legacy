@@ -1,0 +1,72 @@
+.main-navigation {
+  color: $white;
+  position: relative;
+  text-align: center;
+  
+  .links {
+    @media screen and (max-width: $screen-md) {
+      padding: 0 $spacing-small;
+      background-color: $gray;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      transform-origin: top;
+      transform: scaleY(0);
+      transition: transform .2s ease-out;
+    }
+
+    &.is-open {
+      transform: none;
+    }
+    
+    a {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 90%;
+      transition: color .1s linear;
+      
+      @media screen and (min-width: $screen-md) {
+        display: inline-block;
+        padding: $spacing-default $spacing-small;
+      }
+      
+      @media screen and (max-width: $screen-md) {
+        display: block;
+        padding: $spacing-small 0;
+        
+        &:not(:first-child) {
+          border-top: 1px solid $gray-darker;
+        }
+      }
+  
+      &:hover, &:focus {
+        color: $gold;
+      }
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: 90%;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    -webkit-appearance: none;
+    padding: $spacing-small 0;
+    outline: none;
+
+    @media screen and (min-width: $screen-md) {
+      display: none;
+    }
+
+    svg {
+      color: $gold;
+      margin-right: .5rem;
+    }
+  }
+}

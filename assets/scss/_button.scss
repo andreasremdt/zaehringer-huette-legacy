@@ -1,0 +1,19 @@
+.button {
+  border: 2px solid $gold;
+  background-color: $gold;
+  padding: $spacing-small $spacing-default;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 90%;
+  color: $white;
+  transition: color .1s linear, background-color .1s linear;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: .5rem;
+
+  &:hover,  &:focus {
+    background-color: transparent;
+    color: $gold;
+  }
+}

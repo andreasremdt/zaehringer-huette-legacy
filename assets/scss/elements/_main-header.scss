@@ -1,0 +1,12 @@
+.main-header {
+  color: $white;
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    padding: $spacing-large 0 $spacing-default;
+    color: $white;
+    background: transparent url("/assets/icons/title-drawing.svg") center 1.7rem no-repeat;
+    background-size: 10rem;
+  }
+}

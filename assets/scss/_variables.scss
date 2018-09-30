@@ -1,0 +1,28 @@
+// COLORS
+$gray:            #3c3c3c;
+$gray-dark:       #323536;
+$gray-darker:     #292b2c;
+$gray-light:      #f9f9f9;
+$white:           #ffffff;
+$gold:            #a29061;
+$gold-light:      #dfd8c8;
+
+// FONTS STACKS
+$font-headings:     "Vollkorn", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+$font-content:      "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+
+// FONT SETTINGS
+$font-size:         16px;
+$line-height:       1.6;
+$font-weight:       normal;
+
+// DIMENSIONS
+$container-width:   1170px;
+$spacing-default:   1.5rem;
+$spacing-small:     1rem;
+$spacing-large:     3rem;
+
+// BREAKPOINTS
+$screen-xl:         900px; 
+$screen-md:         780px;
+$screen-xs:         500px;

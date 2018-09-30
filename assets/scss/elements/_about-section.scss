@@ -1,0 +1,35 @@
+.about-section {
+  background-color: $white;
+  padding-bottom: $spacing-large;
+  padding-top: $spacing-large;
+  
+  p {
+    text-align: center;
+    
+    @media screen and (max-width: $screen-md) {
+      margin-bottom: $spacing-large;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      margin: 0 auto ($spacing-large * 2) auto;
+      max-width: 60%;
+    }
+  }
+
+  figure {
+    display: flex;
+    
+    @media screen and (min-width: $screen-md) {
+      margin-left: -$spacing-default;
+      margin-right: -$spacing-default;
+    }
+
+    a {
+      flex: 1 1 33.333%;
+
+      @media screen and (min-width: $screen-md) {
+        margin: 0 $spacing-default;
+      }
+    }
+  }
+}

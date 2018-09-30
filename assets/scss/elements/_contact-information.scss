@@ -1,0 +1,42 @@
+.contact-information {
+  background-color: $gray-dark;
+  color: $white;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    height: 3rem;
+  }
+
+  li {
+    display: inline-block;
+    font-size: 85%;
+    line-height: 3rem;
+    
+    &:not(:last-child) {
+      margin-right: $spacing-large;
+      
+      @media screen and (max-width: $screen-xs) {
+        display: none;
+      }
+    }
+
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    transition: color .1s linear;
+    color: $white;
+
+    &:hover, &:focus {
+      color: $gold;
+    }
+  }
+
+  svg {
+    color: $gold;
+    margin-right: .5rem;
+  }
+}

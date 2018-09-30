@@ -1,0 +1,25 @@
+.gallery-section {
+  padding-top: $spacing-large;
+
+  h2 {
+    color: $white;
+  }
+
+  figure {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  a {
+    flex: 1 1 20%;
+    filter: brightness(.9) grayscale(20%);
+
+    @media screen and (max-width: $screen-md) {
+      flex: 1 1 25%
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      flex: 1 1 50%
+    }
+  }
+}

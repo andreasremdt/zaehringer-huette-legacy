@@ -1,0 +1,45 @@
+.main-footer {
+  color: $white;
+  font-size: 85%;
+  padding-top: $spacing-default;
+  padding-bottom: $spacing-default;
+  
+  @media screen and (max-width: $screen-md) {
+    text-align: center;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    background-image: url("/assets/icons/title-drawing.svg");
+    background-position: center center;
+    background-size: 100px;
+  }
+  
+  div {
+    @media screen and (min-width: $screen-md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  p {
+    color: inherit;
+    line-height: inherit;
+    
+    @media screen and (max-width: $screen-md) {
+      margin-top: 0;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      margin: 0;
+    }
+  }
+
+  a {
+    margin-left: $spacing-default;
+    transition: color .1s linear;
+
+    &:hover, &:focus {
+      color: $gold;
+    }
+  }
+}

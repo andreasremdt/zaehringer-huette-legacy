@@ -1,0 +1,35 @@
+.hero-banner {
+  background-image: linear-gradient(to right, rgba($gray-darker, .5), rgba($gray-darker, .5)), url("/assets/images/niilo-isotalo-379496-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  color: $white;
+
+  @media screen and (max-width: $screen-xs) {
+    height: 60vh;
+  }
+
+  @media screen and (min-width: $screen-xs) {
+    height: 40rem;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 0;
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    color: $gray-light;
+    
+    @media screen and (min-width: $screen-xs) {
+      font-size: 1.3rem;
+    }
+  }
+}
