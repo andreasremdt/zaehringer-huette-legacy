@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // Smooth Scrolling
-  var links = document.querySelectorAll('[data-smooth-scroll]');
+  var links = document.querySelectorAll('[data-menu] a');
   
   [].forEach.call(links, function(link) {
     link.addEventListener('click', scrollIntoView);

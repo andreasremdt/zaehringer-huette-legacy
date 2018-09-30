@@ -1016,50 +1016,61 @@ textarea,
     margin: 0;
     padding: 3rem 0 1.5rem;
     color: #ffffff;
-    background: transparent url("/assets/icons/title-drawing.svg") center 1.7rem no-repeat;
+    background: transparent url("../icons/title-drawing.svg") center 1.7rem no-repeat;
     background-size: 10rem; }
 
 .main-navigation {
   color: #ffffff;
   position: relative;
   text-align: center; }
-  @media screen and (max-width: 780px) {
-    .main-navigation .links {
-      padding: 0 1rem;
-      background-color: #3c3c3c;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      -webkit-transform-origin: top;
-              transform-origin: top;
-      -webkit-transform: scaleY(0);
-              transform: scaleY(0);
-      -webkit-transition: -webkit-transform .2s ease-out;
-      transition: -webkit-transform .2s ease-out;
-      transition: transform .2s ease-out;
-      transition: transform .2s ease-out, -webkit-transform .2s ease-out; } }
-  .main-navigation .links.is-open {
-    -webkit-transform: none;
-            transform: none; }
-  .main-navigation .links a {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 90%;
-    -webkit-transition: color .1s linear;
-    transition: color .1s linear; }
-    @media screen and (min-width: 780px) {
-      .main-navigation .links a {
-        display: inline-block;
-        padding: 1.5rem 1rem; } }
+  .main-navigation .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0;
+    padding-left: 0; }
     @media screen and (max-width: 780px) {
-      .main-navigation .links a {
+      .main-navigation .links {
         display: block;
-        padding: 1rem 0; }
-        .main-navigation .links a:not(:first-child) {
-          border-top: 1px solid #292b2c; } }
-    .main-navigation .links a:hover, .main-navigation .links a:focus {
-      color: #a29061; }
+        padding: 0 1rem;
+        background-color: #3c3c3c;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        -webkit-transform-origin: top;
+                transform-origin: top;
+        -webkit-transform: scaleY(0);
+                transform: scaleY(0);
+        -webkit-transition: -webkit-transform .2s ease-out;
+        transition: -webkit-transform .2s ease-out;
+        transition: transform .2s ease-out;
+        transition: transform .2s ease-out, -webkit-transform .2s ease-out; } }
+    .main-navigation .links.is-open {
+      -webkit-transform: none;
+              transform: none; }
+    .main-navigation .links a {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 90%;
+      -webkit-transition: color .1s linear;
+      transition: color .1s linear;
+      color: #ffffff; }
+      @media screen and (min-width: 780px) {
+        .main-navigation .links a {
+          display: inline-block;
+          padding: 1.5rem 1rem; } }
+      @media screen and (max-width: 780px) {
+        .main-navigation .links a {
+          display: block;
+          padding: 1rem 0; }
+          .main-navigation .links a:not(:first-child) {
+            border-top: 1px solid #292b2c; } }
+      .main-navigation .links a:hover, .main-navigation .links a:focus {
+        color: #a29061; }
   .main-navigation button {
     background-color: transparent;
     border: none;
