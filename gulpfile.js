@@ -4,7 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('css', function() {
   return gulp.src('assets/scss/styles.scss')
-    .pipe(sass({ outputStyle: 'nested' }).on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(autoprefixer({ browsers: ['last 2 versions'] }))
     .pipe(gulp.dest('assets/css/'));
 });

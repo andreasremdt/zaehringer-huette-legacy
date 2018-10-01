@@ -1,15 +1,39 @@
 .form-control {
-  background-color: $gray;
-  border: none;
+  background-color: $gray-light;
+  border: 2px solid darken($gray-light, 10%);
   width: 100%;
   outline: none;
-  color: $gray-light;
-  padding: 1rem 1.5rem;
-  margin-bottom: $spacing-small;
+  line-height: 1;
+  color: $gray;
+  padding: .8rem 1.5rem;
   -webkit-appearance: none;
-  transition: background-color .1s linear;
+  transition: border-color .1s linear;
 
   &:hover, &:focus {
-    background-color: $gray-darker;
+    border-color: lighten($gray, 20%);
   }
+
+  &.has-error {
+    border-color: $red;
+  }
+}
+
+.form-error {
+  color: $white;
+  background-color: $red;
+  position: absolute;
+  bottom: calc(100% - .65rem);
+  right: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 80%;
+  height: 1.3rem;
+  line-height: 1.3rem;
+  padding: 0 .5rem;
+}
+
+.form-group {
+  margin-bottom: $spacing-small;
+  position: relative;
 }

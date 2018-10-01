@@ -5,6 +5,7 @@
   display: inline-block;
   text-transform: uppercase;
   font-weight: 600;
+  line-height: 1;
   font-size: 90%;
   color: $white;
   transition: color .1s linear, background-color .1s linear;
@@ -15,5 +16,12 @@
   &:hover,  &:focus {
     background-color: transparent;
     color: $gold;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: lighten($gold, 20%);
+    border-color: lighten($gold, 20%);
+    color: $white;
   }
 }

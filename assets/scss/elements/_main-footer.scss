@@ -9,7 +9,7 @@
   }
 
   @media screen and (min-width: $screen-md) {
-    background-image: url("/assets/icons/title-drawing.svg");
+    background-image: url("../icons/title-drawing.svg");
     background-position: center center;
     background-size: 100px;
   }
@@ -34,8 +34,18 @@
     }
   }
 
+  ul {
+    margin: 0;
+    padding-left: 0;
+  }
+  
+  li {
+    display: inline-block;
+  }
+
   a {
     margin-left: $spacing-default;
+    color: $white;
     transition: color .1s linear;
 
     &:hover, &:focus {

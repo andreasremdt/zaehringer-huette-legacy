@@ -3,18 +3,44 @@
   padding-bottom: $spacing-large;
   background-color: $white;
 
-  p, form {
+  .text, form {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  p {
+  .text {
     text-align: center;
     margin-bottom: $spacing-large;
   }
 
   button {
     width: 100%;
+  }
+
+  .tricky {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .success-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $gold;
+    width: 100%;
+    padding: 1rem;
+    color: $white;
+    margin: 0;
+    z-index: 1;
+    text-align: center;
+    opacity: 0;
+    box-shadow: 0 2px 10px rgba($gray, .3);
+    animation: fade-in .5s ease-out forwards;
+  }
+
+  @keyframes fade-in {
+    to { opacity: 1; }
   }
 }

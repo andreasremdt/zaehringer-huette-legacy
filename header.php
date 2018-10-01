@@ -12,3 +12,8 @@
     <?php get_template_part('template-parts/contact-information'); ?>
     <?php get_template_part('template-parts/main-header'); ?>
     <?php get_template_part('template-parts/main-navigation'); ?>
+
+    <?php if(is_front_page()) : ?>
+      <?php get_template_part('template-parts/hero-banner'); ?>
+    <?php endif; ?>
+    

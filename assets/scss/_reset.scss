@@ -234,6 +234,7 @@ audio:not([controls]) {
 img {
   border-style: none;
   max-width: 100%;
+  height: auto;
 }
 
 figure {
@@ -404,22 +405,22 @@ textarea {
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: $gray-light;
+  color: $gray;
   opacity: 0.6;
 }
 
 ::-moz-placeholder { /* Firefox 19+ */
-  color: $gray-light;
+  color: $gray;
   opacity: 0.6;
 }
 
 :-ms-input-placeholder { /* IE 10+ */
-  color: $gray-light;
+  color: $gray;
   opacity: 0.6;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-  color: $gray-light;
+  color: $gray;
   opacity: 0.6;
 }
 
@@ -459,8 +460,8 @@ textarea {
 }
 
 :-webkit-autofill {
-  box-shadow: 0 0 0 30px $gray inset;
-  -webkit-text-fill-color: $gray-light;
+  box-shadow: 0 0 0 30px $gray-light inset;
+  -webkit-text-fill-color: $gray;
 }
 
 /* Interactive

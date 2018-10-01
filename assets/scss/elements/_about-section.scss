@@ -15,21 +15,4 @@
       max-width: 60%;
     }
   }
-
-  figure {
-    display: flex;
-    
-    @media screen and (min-width: $screen-md) {
-      margin-left: -$spacing-default;
-      margin-right: -$spacing-default;
-    }
-
-    a {
-      flex: 1 1 33.333%;
-
-      @media screen and (min-width: $screen-md) {
-        margin: 0 $spacing-default;
-      }
-    }
-  }
 }
