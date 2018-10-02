@@ -101,7 +101,11 @@
   </div>
 </section>
 
+
+
+<?php get_template_part('template-parts/pricing-section'); ?>
 <?php get_template_part('template-parts/contact-form'); ?>
 <?php get_template_part('template-parts/google-maps'); ?>
+
 
 <?php get_footer(); ?>

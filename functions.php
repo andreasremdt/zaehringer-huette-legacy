@@ -247,6 +247,16 @@ function theme_sidebars() {
 		'before_title' => '<h3>',
 		'after_title' => '</h3>'
 	));
+
+	register_sidebar(array(
+		'name' => 'Reservierungen',
+		'id' => 'booking',
+		'description' => 'An dieser Stelle befindet sich der Buchungskalender.',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>'
+	));
 }
 
 add_action('widgets_init', 'theme_sidebars');
@@ -304,3 +314,18 @@ EOF;
 
 add_action('wp_ajax_contact_send', 'send_contact_email');
 add_action('wp_ajax_nopriv_contact_send', 'send_contact_email');
+
+
+
+function dequeue_styles() {
+	wp_deregister_style('wpbc-calendar');
+	wp_deregister_style('wpbc-calendar-skin');
+	wp_deregister_style('wpbc-client-pages');
+	wp_deregister_style('wpbc-admin-timeline');
+	wp_deregister_style('wpdevelop-bts-theme');
+	wp_deregister_style('wpdevelop-bts');
+
+
+}
+
+add_action('wp_print_styles', 'dequeue_styles', 100);

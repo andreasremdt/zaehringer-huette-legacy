@@ -1,4 +1,160 @@
 .booking-section {
   background-color: $gold;
-  height: 15rem;
+  padding: $spacing-large 0;
+
+  h2 {
+    color: $white;
+    text-align: center;
+    margin-bottom: $spacing-large;
+  }
+}
+
+.datepick-inline {
+  width: auto !important;
+  background-color: $gray;
+  color: lighten($gold, 10%);
+
+  td, th {
+    width: 3.5rem;
+    height: 3.5rem;
+    text-align: center;
+  }
+
+  thead {
+    background-color: $gray-dark;
+  }
+}
+
+.date_available {
+  cursor: pointer;
+
+  &:not(.datepick-current-day) {
+    &:hover, &:focus {
+      background-color: lighten($gray, 10%);
+    }
+  }
+
+  &.datepick-current-day {
+    background-color: $gray-light;
+    color: $gray;
+  }
+}
+
+
+.bk_calendar_frame {
+  width: auto !important;
+}
+
+.datepick-header {
+  text-align: center;
+  padding: 1rem;
+  background-color: $gray-darker;
+}
+
+.calendar-links {
+  display: flex;
+  justify-content: space-between;
+  background-color: $gray-darker;
+
+  a {
+    display: block;
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 3rem;
+
+    &:hover, &:focus {
+      background-color: $gray;
+      color: $gray-light;
+    }
+  }
+}
+
+.wpbc_booking_form_structure {
+  display: flex;
+  justify-content: center;
+  
+  .wpdev-help-message {
+    color: $white;
+    background-color: $red;
+    margin: 0 !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 80%;
+  }
+}
+
+.wpbc_structure_calendar {
+  margin-right: $spacing-large;
+
+  .wpdev-help-message {
+    padding: .5rem !important;
+  }
+
+  .block_hints .date_approved.block_check_in_out, 
+  .block_hints .block_booked, 
+  .date_approved, .date2approve {
+    background-image: repeating-linear-gradient(-45deg, rgba($gray-light, .3), rgba($gray-light, .3) 5px, transparent 5px, transparent 10px);
+    cursor: not-allowed;
+  }
+}
+
+
+
+// Form
+.wpbc_structure_form {
+  input, textarea {
+    background-color: rgba($white, .3);
+    border: 2px solid transparent;
+    padding: .8rem 1.5rem;
+    min-width: 25rem;
+    outline: none;
+    line-height: 1;
+    color: white;
+    transition: border-color .1s linear;
+
+    &:hover, &:focus {
+      border-color: rgba($white, .5);
+    }
+  }
+
+  .controls {
+    position: relative;
+  }
+
+  .control-label {
+    color: $white;
+    display: block;
+    margin-bottom: .4rem;
+  }
+
+  .wpdev-help-message {
+    position: absolute;
+    bottom: calc(100% - .65rem);
+    right: 1rem;
+    height: 1.3rem;
+    line-height: 1.3rem !important;
+    padding: 0 .5rem !important;
+  }
+
+  .btn {
+    border: 2px solid $white;
+    background-color: transparent;
+    padding: $spacing-small $spacing-default;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+    font-size: 90%;
+    color: $white;
+    transition: color .1s linear, background-color .1s linear;
+    cursor: pointer;
+    outline: none;
+
+    &:hover,  &:focus {
+      background-color: $white;
+      color: $gold;
+    }
+  }
 }
