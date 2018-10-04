@@ -111,7 +111,7 @@ a {
   color: inherit;
 }
 
-p a {
+p a, li a {
   border-bottom: 2px solid $gold-light;
   transition: color .1s linear, border-color .1s linear;
   outline: none;

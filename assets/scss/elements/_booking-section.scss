@@ -1,11 +1,49 @@
 .booking-section {
   background-color: $gold;
   padding: $spacing-large 0;
+  position: relative;
 
-  h2 {
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    background: transparent url('../icons/corner.svg') center/cover no-repeat;
+
+    @media screen and (max-width: 1300px) {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  &::before {
+    top: 1rem;
+    left: 0;
+    transform: rotate(90deg);
+  }
+
+  &::after {
+    bottom: 1rem;
+    right: 0;
+    transform: rotate(-90deg);
+  }
+
+  .textwidget p {
     color: $white;
     text-align: center;
     margin-bottom: $spacing-large;
+  }
+
+  .fancy-title {
+    color: white;
+    filter: brightness(4);
+  }
+  
+  .final-price {
+    color: $white;
+    background-color: $gray-darker;
+    margin: 0;
+    padding: 1rem;
   }
 }
 
@@ -14,8 +52,12 @@
   background-color: $gray;
   color: lighten($gold, 10%);
 
+  .datepick {
+    width: 100%;
+  }
+
   td, th {
-    width: 3.5rem;
+    width: 14.2%;
     height: 3.5rem;
     text-align: center;
   }
@@ -23,6 +65,20 @@
   thead {
     background-color: $gray-dark;
   }
+}
+
+.submiting_content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $green;
+  width: 100%;
+  padding: 1rem;
+  color: $white;
+  margin: 0;
+  z-index: 1;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba($gray, .3);
 }
 
 .date_available {
@@ -63,6 +119,7 @@
     font-size: 1.5rem;
     text-align: center;
     line-height: 3rem;
+    outline: none;
 
     &:hover, &:focus {
       background-color: $gray;
@@ -74,6 +131,7 @@
 .wpbc_booking_form_structure {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   
   .wpdev-help-message {
     color: $white;
@@ -87,9 +145,16 @@
 
 .wpbc_structure_calendar {
   margin-right: $spacing-large;
+  flex: 1;
+
+  @media screen and (max-width: 700px) {
+    flex-basis: 100%;
+    margin: 0 0 $spacing-large 0;
+  }
 
   .wpdev-help-message {
     padding: .5rem !important;
+    display: block;
   }
 
   .block_hints .date_approved.block_check_in_out, 
@@ -100,23 +165,26 @@
   }
 }
 
-
-
-// Form
 .wpbc_structure_form {
-  input, textarea {
+  flex: 1;
+
+  input, textarea, select {
     background-color: rgba($white, .3);
     border: 2px solid transparent;
-    padding: .8rem 1.5rem;
-    min-width: 25rem;
+    padding: .8rem 1rem;
+    width: 100%;
     outline: none;
     line-height: 1;
-    color: white;
+    color: darken($gold, 20%);
     transition: border-color .1s linear;
 
     &:hover, &:focus {
       border-color: rgba($white, .5);
     }
+  }
+
+  select {
+    color: darken($gold, 20%);
   }
 
   .controls {

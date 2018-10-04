@@ -32,6 +32,7 @@
       font-size: 90%;
       transition: color .1s linear;
       color: $white;
+      border: none;
       
       @media screen and (min-width: $screen-md) {
         display: inline-block;

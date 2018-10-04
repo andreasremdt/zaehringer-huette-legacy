@@ -29,6 +29,7 @@
     align-items: center;
     transition: color .1s linear;
     color: $white;
+    border: none;
 
     &:hover, &:focus {
       color: $gold;

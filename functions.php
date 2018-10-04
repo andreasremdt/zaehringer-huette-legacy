@@ -254,7 +254,7 @@ function theme_sidebars() {
 		'description' => 'An dieser Stelle befindet sich der Buchungskalender.',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h2>',
+		'before_title' => '<h2 class="fancy-title">',
 		'after_title' => '</h2>'
 	));
 }
@@ -263,7 +263,12 @@ add_action('widgets_init', 'theme_sidebars');
 
 
 
-function send_contact_email() {
+function submit_form_data() {
+	$dir_name = dirname(__FILE__);
+
+  require $dir_name . '/class.phpmailer.php';
+	require $dir_name . '/class.smtp.php';
+	
   try {
 		$name = trim(htmlspecialchars($_POST['name']));
 		$email = trim(htmlspecialchars($_POST['email']));
@@ -279,7 +284,7 @@ function send_contact_email() {
     }
  
 		$headers = array('Content-Type: text/html; charset=UTF-8', 'From: ' . $email . ' <' . $email . '>');
-    $send_to = "effinger@zous.eu";
+    $send_to = "info@zaehringer-huette.de";
     $subject = 'Anfrage zur Zähringer Hütte von ' . $name;
 		$message = <<<EOF
 		<style type="text/css">
@@ -299,21 +304,44 @@ function send_contact_email() {
 		
     <p>Sie können direkt auf diese E-Mail antworten, um dem Absender eine Antwort zu senden.</p>
 EOF;
- 
-    if (wp_mail($send_to, $subject, $message, $headers)) {
-      echo json_encode(array('status' => 'success', 'message' => 'Contact message sent.'));
-      exit;
+		
+		$mail = new PHPMailer;
+
+		$mail->isSMTP();
+		$mail->Host = 'wp12240570.mailout.server-he.de';
+		$mail->SMTPAuth = true;
+		$mail->Username = 'wp12240570-info';
+		$mail->Password = '\wZx*68;/q8v3h(6';
+		$mail->SMTPSecure = 'tls';
+		$mail->Port = 587;
+		$mail->CharSet = 'UTF-8';
+
+		$mail->From = $send_to;
+		$mail->FromName = 'Zähringer Hütte';
+		$mail->addAddress($send_to, 'Zähringer Hütte');
+		$mail->addReplyTo($email, $name);
+
+		$mail->WordWrap = 50;          
+		$mail->isHTML(true);
+
+		$mail->Subject = $subject;
+		$mail->Body    = $message;
+		$mail->AltBody = $message;
+
+		if(!$mail->send()) {
+			throw new Exception($mail->ErrorInfo);
     } else {
-      throw new Exception('Failed to send email. Check AJAX handler.');
+			echo json_encode(array('status' => 'success', 'message' => 'Contact message sent.'));
     }
   } catch (Exception $e) {
-    echo json_encode(array('status' => 'error', 'message' => $e->getMessage()));
-    exit;
+		echo json_encode(array('status' => 'success', 'message' => $e->getMessage()));
 	}
+
+	wp_die();
 }
 
-add_action('wp_ajax_contact_send', 'send_contact_email');
-add_action('wp_ajax_nopriv_contact_send', 'send_contact_email');
+add_action('wp_ajax_submit_form_data', 'submit_form_data');
+add_action('wp_ajax_nopriv_submit_form_data', 'submit_form_data');
 
 
 

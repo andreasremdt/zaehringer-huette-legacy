@@ -6,12 +6,19 @@
       </svg>
       <span>Menu anzeigen</span>
     </button>
-
-    <?php wp_nav_menu(array(
-      'theme_location' => 'main_menu',
-      'container' => 'ul',
-      'menu_class' => 'links',
-      'items_wrap' => '<ul data-menu class="links">%3$s</ul>'
-    )); ?>
+    <?php if (is_front_page()) : ?>
+      <?php wp_nav_menu(array(
+        'theme_location' => 'main_menu',
+        'container' => 'ul',
+        'menu_class' => 'links',
+        'items_wrap' => '<ul data-menu class="links">%3$s</ul>'
+      )); ?>
+    <?php else : ?>
+      <ul class="links">
+        <li>
+          <a href="<?php bloginfo('url'); ?>">Zurück zur Homepage</a>
+        </li>
+      </ul>
+    <?php endif; ?>
   </div>
 </nav>

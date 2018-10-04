@@ -130,11 +130,11 @@ function sendForm(form) {
   var xhr = new XMLHttpRequest();
   var formData = new FormData(form);
 
-  formData.append('action', 'contact_send');
+  formData.append('action', 'submit_form_data');
 
   xhr.addEventListener('load', handleFormSuccess);
   xhr.addEventListener('error', handleFormError);
-  xhr.open('POST', '/wp-admin/admin-ajax.php');
+  xhr.open('POST', 'http://zaehringer-huette.de/beta/wp-admin/admin-ajax.php');
   xhr.send(formData);
 }
 
@@ -198,6 +198,30 @@ function toggleMobileMenu(menu, button) {
   }
 }
 
+function getPrice() {
+  var pricePerDay = (month > 6 && month < 9) ? 200.00 : 250.00;
+  var extraPerPerson = (month > 6 && month < 9) ? 20.00 : 30.00;
+  var discountPercentage = 20;
+  var discountAfter = 4;
+  var cleaningFee = 60.00;
+  var tax = 2.70;
+
+  var count = document.querySelectorAll('td.datepick-current-day').length;
+  var numberOfPeople = parseInt(document.querySelector('select#count1').value);
+  var currentPrice = pricePerDay * count + cleaningFee + (tax * count * numberOfPeople);
+  var discount = discountPercentage * (count * pricePerDay) / 100;
+
+  if (count > discountAfter) {
+    currentPrice = (pricePerDay * count - discount) + cleaningFee + (tax * count * numberOfPeople);
+  }
+
+  if (numberOfPeople > 4) {
+    currentPrice += extraPerPerson;
+  }
+
+  return parseFloat(currentPrice).toFixed(2);
+}
+
 
 // Active Pricing Card
 var month = new Date().getMonth();
@@ -227,14 +251,37 @@ menuToggle.addEventListener('click', function() {
 
 // Contact form
 var contactForm = document.querySelector('[data-contact-form]');
-var submitButton = contactForm.querySelector('button');
-contactForm.setAttribute('novalidate', true); 
-contactForm.addEventListener('submit', handleSubmit);
-contactForm.addEventListener('blur', handleBlur, true);
+
+if (contactForm) {
+  var submitButton = contactForm.querySelector('button');
+  contactForm.setAttribute('novalidate', true); 
+  contactForm.addEventListener('submit', handleSubmit);
+  contactForm.addEventListener('blur', handleBlur, true);
+}
 
 
 
 // Litebox
 new Litebox({
   el: '.gallery a'
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var priceField = document.createElement('p');
+  priceField.textContent = 'Bitte wählen Sie Tage aus, um die Kosten hier zu sehen.';
+  priceField.classList.add('final-price');
+  document.querySelector('.wpbc_structure_calendar').appendChild(priceField);
+  
+  document.body.addEventListener('click', function(event) {
+    if (event.target.matches('td.date_available') || event.target.parentNode.matches('td.date_available')) {
+      priceField.textContent = 'Gschätzte Kosten: ' + getPrice(month) + '€';
+    }
+  });
+
+  document.body.addEventListener('change', function(event) {
+    if (event.target.matches('select#count1')) {
+      priceField.textContent = 'Gschätzte Kosten: ' + getPrice(month) + '€';
+    }
+  });
 });
