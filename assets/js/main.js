@@ -56,18 +56,18 @@ function showError(field, error) {
     return;
   }
 
-  var message = field.form.querySelector(`[data-form-error]#error-for-${id}`);
+  var message = field.form.querySelector('[data-form-error]#error-for-' + id);
 
   if (!message) {
     message = document.createElement('p');
     message.className = 'form-error';
-    message.id = `error-for-${id}`;
+    message.id = 'error-for-' + id;
     message.setAttribute('data-form-error', true);
 
     field.parentNode.insertBefore(message, field.nextSibling);
   }
 
-  field.setAttribute('aria-describedby', `error-for-${id}`);
+  field.setAttribute('aria-describedby', 'error-for-' + id);
 
   message.innerHTML = error;
 }
@@ -82,7 +82,7 @@ function removeError(field) {
     return;
   }
 
-  var message = field.form.querySelector(`[data-form-error]#error-for-${id}`);
+  var message = field.form.querySelector('[data-form-error]#error-for-' + id);
 
   if (!message) {
     return;
@@ -103,17 +103,17 @@ function handleSubmit(event) {
   }
 
   // Check each field for errors and store the first one in `hasErrors`
-  Array.from(fields).forEach(function(field) {
-    let error = hasError(field);
-
+  for (var i = 0; i < fields.length; i++) {
+    let error = hasError(fields[i]);
+  
     if (error) {
-      showError(field, error);
-
+      showError(fields[i], error);
+  
       if (!hasErrors) {
-        hasErrors = field;
+        hasErrors = fields[i];
       }
     }
-  });
+  }
 
   // If there is a field with an error show it, otherwise submit
   if (hasErrors) {
