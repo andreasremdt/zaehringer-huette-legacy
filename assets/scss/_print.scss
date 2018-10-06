@@ -1,0 +1,73 @@
+@media print {
+  body {
+    background-color: $white;
+  }
+
+  section {
+    page-break-before: always;
+  }
+
+  .main-navigation,
+  .hero-banner,
+  .contact-section,
+  .map-section,
+  .main-footer,
+  .main-header,
+  .contact-information {
+    display: none;
+  }
+
+  .feature-section {
+    background-color: transparent;
+  }
+
+  .gallery-section h2 {
+    color: $gray;
+  }
+
+  .pricing-section {
+    h2 {
+      color: $gray;
+    }
+
+    .col,
+    .bottom {
+      opacity: 1;
+      border: 2px solid $gold;
+    }
+
+    .button {
+      display: none;
+    }
+  }
+
+  .booking-section {
+    background-color: transparent;
+
+    .fancy-title, .textwidget p {
+      color: $gray;
+    }
+
+    .wpbc_structure_form,
+    .calendar-links {
+      display: none;
+    }
+
+    .wpbc_structure_calendar {
+      margin-right: 0;
+    }
+
+    .datepick-inline,
+    .datepick-inline thead,
+    .final-price,
+    .datepick-header {
+      background-color: transparent;
+      color: $gray;
+    }
+
+    .datepick-inline td,
+    .datepick-inline th {
+      border: 2px solid $gray;
+    }
+  }
+}

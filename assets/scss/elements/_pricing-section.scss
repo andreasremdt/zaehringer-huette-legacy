@@ -11,6 +11,7 @@
     padding: $spacing-small;
     margin: $spacing-small;
     opacity: .6;
+    flex: 1;
     transition: opacity .2s linear;
     
     @media screen and (max-width: $screen-md) {
@@ -74,7 +75,6 @@
       width: 10rem;
       text-align: center;
       transform: rotate(45deg) translateX(3rem) translateY(-1rem);
-
     }
   }
 }

@@ -40,12 +40,12 @@
 }
 
 .col-4 {
-  @media screen and (max-width: $screen-md) and (min-width: $screen-xs) {
+  @media (max-width: $screen-md) and (min-width: $screen-xs) {
     flex-basis: 50%;
     max-width: 50%;
   }
 
-  @media screen and (min-width: $screen-md) {
+  @media (min-width: $screen-md) {
     flex-basis: 33.33333333%;
     max-width: 33.33333333%;
   }
@@ -57,7 +57,7 @@
 }
 
 .col-6 {  
-  @media screen and (min-width: $screen-md) {
+  @media (min-width: $screen-md) {
     flex-basis: 50%;
     max-width: 50%;
   }
