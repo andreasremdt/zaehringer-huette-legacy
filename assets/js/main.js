@@ -134,7 +134,7 @@ function sendForm(form) {
 
   xhr.addEventListener('load', handleFormSuccess);
   xhr.addEventListener('error', handleFormError);
-  xhr.open('POST', 'http://zaehringer-huette.de/beta/wp-admin/admin-ajax.php');
+  xhr.open('POST', '/wp-admin/admin-ajax.php');
   xhr.send(formData);
 }
 
