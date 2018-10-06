@@ -9,7 +9,7 @@ function enableActiveCard(month) {
 }
 
 function hasError(field) {
-  let validity = field.validity;
+  var validity = field.validity;
 
   if (field.type === 'submit' || field.type === 'button') {
     return;
@@ -104,7 +104,7 @@ function handleSubmit(event) {
 
   // Check each field for errors and store the first one in `hasErrors`
   for (var i = 0; i < fields.length; i++) {
-    let error = hasError(fields[i]);
+    var error = hasError(fields[i]);
   
     if (error) {
       showError(fields[i], error);
