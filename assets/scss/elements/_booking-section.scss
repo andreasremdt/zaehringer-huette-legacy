@@ -1,32 +1,36 @@
 .booking-section {
   background-color: $gold;
   padding: $spacing-large 0;
-  position: relative;
-
-  &::before, &::after {
-    content: '';
-    position: absolute;
-    width: 15rem;
-    height: 15rem;
-    background: transparent url('../icons/corner.svg') center/cover no-repeat;
-
-    @media screen and (max-width: 1300px) {
-      width: 8rem;
-      height: 8rem;
+  
+  @media screen and (min-width: 400px) {
+    position: relative;
+    
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 15rem;
+      height: 15rem;
+      background: transparent url('../icons/corner.svg') center/cover no-repeat;
+  
+      @media screen and (max-width: 1300px) {
+        width: 8rem;
+        height: 8rem;
+      }
+    }
+  
+    &::before {
+      top: 1rem;
+      left: 0;
+      transform: rotate(90deg);
+    }
+  
+    &::after {
+      bottom: 1rem;
+      right: 0;
+      transform: rotate(-90deg);
     }
   }
 
-  &::before {
-    top: 1rem;
-    left: 0;
-    transform: rotate(90deg);
-  }
-
-  &::after {
-    bottom: 1rem;
-    right: 0;
-    transform: rotate(-90deg);
-  }
 
   .textwidget p {
     color: $white;
@@ -145,7 +149,7 @@
 
 .wpbc_structure_calendar {
   margin-right: $spacing-large;
-  flex: 1;
+  flex: 1 1 calc(50% - 3rem);
 
   @media screen and (max-width: 700px) {
     flex-basis: 100%;
@@ -166,7 +170,7 @@
 }
 
 .wpbc_structure_form {
-  flex: 1;
+  flex: 1 1 50%;
 
   input, textarea, select {
     background-color: rgba($white, .3);
@@ -175,15 +179,18 @@
     width: 100%;
     outline: none;
     line-height: 1;
+    border-radius: 0;
     color: darken($gold, 20%);
     transition: border-color .1s linear;
-
+    
     &:hover, &:focus {
       border-color: rgba($white, .5);
     }
   }
-
+  
   select {
+    -webkit-appearance: none;
+    padding: 1rem;
     color: darken($gold, 20%);
   }
 
