@@ -367,22 +367,6 @@ add_filter('style_loader_tag', 'remove_attr', 10, 2);
 
 
 
-function wp_html_compression_finish($html) {
-	$dir_name = dirname(__FILE__);
-
-  require $dir_name . '/inc/compression.php';
-
-	return new WP_HTML_Compression($html);
-}
-
-function wp_html_compression_start() {
-	ob_start('wp_html_compression_finish');
-}
-
-add_action('get_header', 'wp_html_compression_start');
-
-
-
 function replace_core_jquery_version() {
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.1.1' );
