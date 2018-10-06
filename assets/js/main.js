@@ -170,19 +170,6 @@ function handleFormError() {
   showMessage('Leider ist beim Senden Ihrer Nachricht ein Fehler aufgetreten. Bitte versuchen Sie es direkt an info@zaehringer-huette.de.', true);
 }
 
-function scrollIntoView(event) {
-  event.preventDefault();
-  
-  var target = document.querySelector(this.hash);
-
-  if (target) {
-    target.scrollIntoView({
-      block: 'start',
-      behavior: 'smooth'
-    });
-  }
-}
-
 function toggleMobileMenu(menu, button) {
   var icon = button.querySelector('use');
   var text = button.querySelector('span');
@@ -227,15 +214,6 @@ function getPrice() {
 var month = new Date().getMonth();
 
 enableActiveCard(month);
-
-
-
-// Smooth Scrolling
-var links = document.querySelectorAll('[data-menu] a');
-
-[].forEach.call(links, function(link) {
-  link.addEventListener('click', scrollIntoView);
-});
 
 
 
