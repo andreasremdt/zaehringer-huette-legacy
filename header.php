@@ -8,6 +8,14 @@
 
     <?php wp_head(); ?>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= get_template_directory_uri(); ?>/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= get_template_directory_uri(); ?>/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= get_template_directory_uri(); ?>/favicon-16x16.png">
+    <link rel="manifest" href="<?= get_template_directory_uri(); ?>/site.webmanifest">
+    <link rel="mask-icon" href="<?= get_template_directory_uri(); ?>/safari-pinned-tab.svg" color="#a29061">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#292b2c">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php bloginfo('url'); ?>">
     <meta property="og:title" content="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>">
