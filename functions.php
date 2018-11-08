@@ -274,6 +274,10 @@ function submit_form_data() {
 		$email = trim(htmlspecialchars($_POST['email']));
 		$message = trim(htmlspecialchars($_POST['message']));
 		$phone = trim(htmlspecialchars($_POST['phone']));
+		$street = trim(htmlspecialchars($_POST['street']));
+		$number = trim(htmlspecialchars($_POST['number']));
+		$zipcode = trim(htmlspecialchars($_POST['zipcode']));
+		$city = trim(htmlspecialchars($_POST['city']));
 
     if (empty($name) || empty($email) || empty($message)) {
       throw new Exception('Bad form parameters. Check the markup to make sure you are naming the inputs correctly.');
@@ -299,8 +303,11 @@ function submit_form_data() {
 		<b>Rückrufnummer:</b><br >
 		$phone<br /><br />
 		<b>Nachricht:</b><br />
-		$message
-		</p>
+		$message</p>
+
+		<p><b>Adresse des Absenders:</b><br />
+		$street $number<br />
+		$zipcode $city</p>
 		
     <p>Sie können direkt auf diese E-Mail antworten, um dem Absender eine Antwort zu senden.</p>
 EOF;

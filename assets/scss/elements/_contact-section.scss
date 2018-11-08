@@ -24,6 +24,15 @@
     left: -9999px;
   }
 
+  fieldset {
+    margin-bottom: $spacing-default;
+    border: 2px solid $gold-light;
+  }
+
+  legend {
+    color: $gold;
+  }
+
   .success-message {
     position: fixed;
     top: 0;
@@ -42,5 +51,41 @@
 
   @keyframes fade-in {
     to { opacity: 1; }
+  }
+
+  @media (max-width: $screen-md) and (min-width: $screen-xs) {
+    .col-4,
+    .col-8 {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+
+    .col-10 {
+      flex-basis: 66.66666667%;
+      max-width: 66.66666667%;
+    }
+    
+    .col-2 {
+      flex-basis: 33.33333333%;
+      max-width: 33.33333333%;
+    }
+  }
+
+  @media (max-width: $screen-xs) {
+    .col-4,
+    .col-8 {
+      flex-basis: 100%;
+      max-width:100%;
+    }
+
+    .col-10 {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    
+    .col-2 {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
   }
 }

@@ -20,9 +20,37 @@
         </div>
       </div>
       <div class="form-group">
-        <textarea name="message" class="form-control" placeholder="Nachricht *" aria-label="Ihre Nachricht" cols="30" rows="10" required></textarea>
+        <textarea name="message" class="form-control" placeholder="Ihre Nachricht *" aria-label="Ihre Nachricht" cols="30" rows="10" required></textarea>
       </div>
       <input type="checkbox" name="contact-by-fax-only" value="0" class="tricky js-tricky" tabindex="-1" aria-hidden="true">
+      <fieldset>
+        <legend>Ihre Adresse</legend>
+        <p>Bei Interesse an der Miete unserer Hütte tragen Sie bitte Ihre Adressdaten hier ein, damit wir den Mietvertrag erstellen können. <strong>Ohne diese Daten kann die Hütte nicht vermietet werden.</strong></p>
+        <div class="row">
+          <div class="col-10">
+            <div class="form-group">
+              <input type="text" name="street" class="form-control" placeholder="Straße" aria-label="Bitte geben Sie Ihre Straße hier ein">
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="form-group">
+              <input type="text" name="number" class="form-control" placeholder="Nr." aria-label="Bitte geben Sie Ihre Hausnummer hier ein">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <input type="number" name="zipcode" class="form-control" placeholder="Postleitzahl" aria-label="Bitte geben Sie ihre Postleitzahl hier ein">
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="form-group">
+              <input type="text" name="city" class="form-control" placeholder="Stadt" aria-label="Bitte geben Sie Ihre Stadt hier ein">
+            </div>
+          </div>
+        </div>
+      </fieldset>
       <button type="submit" class="button">Nachricht senden</button>
     </form>
   </div>
